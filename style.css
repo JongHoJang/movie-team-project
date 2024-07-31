@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap");
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+header {
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 80px;
+  top: 0;
+  font-size: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+  padding: 0 100px 0 50px;
+  box-sizing: border-box;
+  z-index: 9000;
+}
+header .com {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+header .com h1 {
+  font-size: 40px;
+  margin: 0;
+}
+header .com h1:hover {
+  cursor: pointer;
+}
+
+header .com h6 {
+  margin: 0;
+  padding-top: 20px;
+  color: #d3d3d3;
+}
+form {
+  height: 5cap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+form > label {
+  margin-right: 10px;
+  font-size: 15px;
+}
+form > .searchInput {
+  width: 250px;
+  height: 40%;
+  border: none;
+  border-radius: 30px;
+  box-sizing: border-box;
+  padding-left: 20px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+form > .searchBtn {
+  background-color: #fdd370;
+  height: 36px;
+  width: 47px;
+  border: none;
+  border-radius: 16px;
+
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+form > .searchBtn:hover {
+  cursor: pointer;
+  background-color: #eac367ef;
+}
+section {
+  margin: 150px 0 100px 0;
+  padding: 20px 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 45px;
+}
+.movieCard {
+  background-color: #d3d3d3;
+  border-radius: 30px;
+  padding: 13px;
+  width: 280px;
+  height: 370px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease,
+    background-color 0.4s ease;
+}
+.movieCard:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.movieCard .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  gap: 10px;
+}
+.movieCard .content > img {
+  border-radius: 20px;
+}
+.movieCard .content .info > .title {
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
+}
+.movieCard .content .info > .star {
+  margin: 3px 0 12px 0;
+  font-size: 12px;
+  color: rgb(117, 117, 117);
+  text-align: center;
+  transition: color 0.2s;
+}
+.movieCard:hover .content .info > .star {
+  color: black;
+}
+.movieCard .content .info > .overview {
+  margin: 0px;
+  font-size: 10px;
+  text-align: justify;
+}
