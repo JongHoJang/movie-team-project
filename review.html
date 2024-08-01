@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세 페이지</title>
+    <script defer src="/js/review.js"></script>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/review.css" />
+</head>
+<body>
+    <div id="reviewContainer">
+        <div id="reviewSection">
+            <h1>작성된 리뷰들</h1>
+            <div id="reviews"></div>
+        </div>
+        <div id="creatReview">
+            <h2>리뷰 작성</h2>
+            <form id="reviewForm">
+                <div id="formGroup">
+                    <input type="text" id="author" placeholder="작성자" required>
+                    <select id="star" required>
+                        <option value="none">별점 선택</option>
+                        <option value="⭐">⭐</option>
+                        <option value="⭐⭐">⭐⭐</option>
+                        <option value="⭐⭐⭐">⭐⭐⭐</option>
+                        <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+                        <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+                    </select>
+                    <input type="password" id="password" placeholder="비밀번호" required>
+                </div>
+                <div id="formGroup">
+                    <textarea id="review" rows="4" placeholder="리뷰글 (최대 100자)" maxlength="100" required></textarea>
+                </div>
+                <button type="submit">등록</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

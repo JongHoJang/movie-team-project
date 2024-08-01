@@ -35,3 +35,9 @@ li {
   padding-left: 0;
   margin-left: 0;
 } */
+
+#review {
+  width: 600px;
+  height: 100px;
+  resize: none;
+}
