@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function fetchMovies() {
     const API_KEY = 'cb0e01db7bf2b11a14af40c71fbcfd57';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6925f062bba33da1cf932c1d975196e57406c766
     const options = {
       method: 'GET',
       headers: {
