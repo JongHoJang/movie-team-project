@@ -42,14 +42,26 @@ li {
   resize: none;
 }
 
-.deleteModal {
+.confirmModal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.closeConfirmModal:hover,
+.closeConfirmModal:focus {
+  cursor: pointer;
+}
+
+.modifyModal {
   display: none;
   position: fixed;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.close:hover,
-.close:focus {
+.closeModifyModal:hover,
+.closeModifyModal:focus {
   cursor: pointer;
 }

@@ -19,7 +19,7 @@
             <form id="reviewForm">
                 <div id="formGroup">
                     <input type="text" id="author" placeholder="작성자" required>
-                    <select id="rating" required>
+                    <select id="rating" class="rating" required>
                         <option value="none">별점 선택</option>
                         <option value="⭐">⭐</option>
                         <option value="⭐⭐">⭐⭐</option>
@@ -37,14 +37,32 @@
         </div>
     </div>
 
-    <!-- 모달 창 -->
-     <div id="deleteModal" class="deleteModal">
-        <div class="modalContent">
-            <span class="close">&times;</span>
-            <div class="confirmPassword">
-                <p>비밀번호를 입력하세요:</p>
-                <input type="password" id="modalPassword" placeholder="비밀번호" minlength="4" maxlength="4">
-                <button id="confirmDelete">확인</button>
+    <!-- 비밀번호 확인 모달 창 -->
+     <div id="confirmModal" class="confirmModal">
+        <div class="confirmModalContent">
+            <span class="closeConfirmModal">&times;</span>
+            <div class="confirmPasswordContent">
+                <p>비밀번호를 입력하세요</p>
+                <input type="password" id="modalPasswordInput" placeholder="비밀번호" minlength="4" maxlength="4">
+                <button id="confirmPassword">확인</button>
+            </div>
+        </div>
+     </div>
+    <!-- 리뷰 수정 모달 창 -->
+     <div id="modifyModal" class="modifyModal">
+        <div class="modifyModalContent">
+            <span class="closeModifyModal">&times;</span>
+            <div class="modifyReviewContent">
+                <select id="modifyRating" class="modifyRating" required>
+                    <option value="none">별점 선택</option>
+                    <option value="⭐">⭐</option>
+                    <option value="⭐⭐">⭐⭐</option>
+                    <option value="⭐⭐⭐">⭐⭐⭐</option>
+                    <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+                    <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+                </select>
+                <textarea id="modifyReview" rows="4" placeholder="리뷰글 (최대 100자)" maxlength="100" required></textarea>
+                <button id="confirmModifyReview">확인</button>
             </div>
         </div>
      </div>
