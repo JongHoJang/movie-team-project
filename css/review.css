@@ -41,3 +41,15 @@ li {
   height: 100px;
   resize: none;
 }
+
+.deleteModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.close:hover,
+.close:focus {
+  cursor: pointer;
+}
