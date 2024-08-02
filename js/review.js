@@ -25,31 +25,37 @@ document.addEventListener('DOMContentLoaded', () => {
         // 리뷰 삭제 버튼 클릭 시 비밀번호 확인 모달 열기
         document.querySelectorAll('.deleteBtn').forEach(button => {
             button.addEventListener('click', (event) => {
-                reviewToDeleteIndex = event.target.getAttribute('data-index');
-                openModal(confirmModal);
+                reviewToDeleteIndex = parseInt(event.target.getAttribute('data-index'), 10);
+                console.log('삭제할 리뷰 인덱스:', reviewToDeleteIndex);
+                openModal(confirmModal, 'delete');
             });
         });
 
         // 리뷰 수정 버튼 클릭 시 비밀번호 확인 모달 열기
         document.querySelectorAll('.modifyBtn').forEach(button => {
             button.addEventListener('click', (event) => {
-                reviewToModifyIndex = event.target.getAttribute('data-index');
-                openModal(confirmModal);
+                reviewToModifyIndex = parseInt(event.target.getAttribute('data-index'), 10);
+                console.log('수정할 리뷰 인덱스:', reviewToModifyIndex);
+                openModal(confirmModal, 'modify');
             });
         });
     }
 
-    function openModal(modal) {
+    function openModal(modal, actionType) {
         modal.style.display = 'block';
+        modal.dataset.actionType = actionType;
     }
 
     function closeModal(modal) {
         modal.style.display = 'none';
+        modal.dataset.actionType = '';
     }
     
     // 비밀번호 맞는지 확인
     function handlePasswordConfirm(index, callback) {
         const enteredPassword = document.getElementById('modalPasswordInput').value;
+        console.log('입력된 비밀번호:', enteredPassword);
+        console.log('저장된 비밀번호:', storedReviews[index].password);
         if (enteredPassword === storedReviews[index].password) {
             callback();
             closeModal(confirmModal);
@@ -67,16 +73,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // 비밀번호 확인 모달 -> 비밀번호 확인 버튼 클릭 시
     // (삭제할or수정할 리뷰글 인덱스가 존재할 경우)
     document.getElementById('confirmPassword').addEventListener('click', () => {
-        if (reviewToDeleteIndex !== null) {
+        console.log('confirmPassword 버튼 클릭됨');
+        const actionType = confirmModal.dataset.actionType;
+
+        if (actionType === 'delete' && reviewToDeleteIndex !== null) {
             handlePasswordConfirm(reviewToDeleteIndex, () => {
                 storedReviews.splice(reviewToDeleteIndex, 1);
                 localStorage.setItem('reviews', JSON.stringify(storedReviews));
                 displayReviews();
+                reviewToDeleteIndex = null;
             });
-        } else if (reviewToModifyIndex !== null) {
+        } else if (actionType === 'modify' && reviewToModifyIndex !== null) {
             handlePasswordConfirm(reviewToModifyIndex, () => {
                 populateModifyModal(reviewToModifyIndex);
                 openModal(modifyModal);
+                // reviewToModifyIndex = null;
+                console.log('수정 모달 열기');
             });
         }
     });
@@ -88,9 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 수정 모달 -> 리뷰 수정 확인 버튼 클릭 시
     document.getElementById('confirmModifyReview').addEventListener('click', () => {
+        console.log('confirmModifyReview 버튼 클릭됨');
         if (reviewToModifyIndex !== null) {
             const updatedRating = document.getElementById('modifyRating').value;
             const updatedReview = document.getElementById('modifyReview').value;
+            console.log('수정할 별점:', updatedRating);
+            console.log('수정할 리뷰:', updatedReview);
+
+            // 데이터 업데이트
             storedReviews[reviewToModifyIndex] = {
                 ...storedReviews[reviewToModifyIndex],
                 rating: updatedRating,
@@ -99,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('reviews', JSON.stringify(storedReviews));
             displayReviews();
             closeModal(modifyModal);
+            reviewToModifyIndex = null;
         }
     });
 
@@ -108,10 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const author = document.getElementById('author').value;
         const rating = document.getElementById('rating').value;
-        const review = document.getElementById('review').value;
+        const reviewText = document.getElementById('review').value;
         const password = document.getElementById('password').value;
 
-        storedReviews.push({ author, rating, review, password });
+        storedReviews.push({ author, rating, review: reviewText, password });
         localStorage.setItem('reviews', JSON.stringify(storedReviews));
 
         reviewForm.reset();
