@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>최고의 인기영화는</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="aaa">
+      <div class="aaa-text">
+        <h1>최고의 인기영화는</h1>
+        <form class="search-form" onsubmit="search_movie(event)">
+          <input class="search-box" placeholder="영화 검색..." />
+          <button id="searchBtn">검색</button>
+        </form>
+      </div>
+    </section>
+    <section class="movies">
+      <div id="movie-container"></div>
+    </section>
+    <script src="2.js"></script>
+  </body>
+</html>
