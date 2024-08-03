@@ -22,7 +22,7 @@
             <h2>리뷰 작성</h2>
             <form id="reviewForm">
                 <div id="formGroup">
-                    <input type="text" id="author" placeholder="작성자" autocomplete="off" required>
+                    <input type="text" id="author" placeholder="작성자" autocomplete="off" maxlength="7" required>
                     <select id="rating" class="rating" required>
                         <option value="none">별점 선택</option>
                         <option value="⭐">⭐</option>
@@ -34,7 +34,7 @@
                     <input type="password" id="password" placeholder="비밀번호" minlength="4" maxlength="4" required>
                 </div>
                 <div id="formGroup">
-                    <textarea id="review" rows="4" placeholder="리뷰글 (최대 100자)" maxlength="100" required></textarea>
+                    <textarea id="review" placeholder="리뷰글 (최대 100자)" required></textarea>
                 </div>
                 <button type="submit">등록</button>
             </form>

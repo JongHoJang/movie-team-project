@@ -110,16 +110,21 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('수정할 별점:', updatedRating);
       console.log('수정할 리뷰:', updatedReview);
 
-      // 데이터 업데이트
-      storedReviews[reviewToModifyIndex] = {
-        ...storedReviews[reviewToModifyIndex],
-        rating: updatedRating,
-        review: updatedReview
-      };
-      localStorage.setItem('reviews', JSON.stringify(storedReviews));
-      displayReviews();
-      closeModal(modifyModal);
-      reviewToModifyIndex = null;
+      if (updatedRating !== 'none') {
+        // 데이터 업데이트
+        storedReviews[reviewToModifyIndex] = {
+          ...storedReviews[reviewToModifyIndex],
+          rating: updatedRating,
+          review: updatedReview
+        };
+
+        localStorage.setItem('reviews', JSON.stringify(storedReviews));
+        displayReviews();
+        closeModal(modifyModal);
+        reviewToModifyIndex = null;
+      } else {
+        alert('별점을 선택해주세요.');
+      }
     }
   });
 
@@ -132,11 +137,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviewText = document.getElementById('review').value;
     const password = document.getElementById('password').value;
 
-    storedReviews.push({ author, rating, review: reviewText, password });
-    localStorage.setItem('reviews', JSON.stringify(storedReviews));
+    if (rating !== 'none') {
+      storedReviews.push({ author, rating, review: reviewText, password });
+      localStorage.setItem('reviews', JSON.stringify(storedReviews));
 
-    reviewForm.reset();
-    displayReviews();
+      reviewForm.reset();
+      displayReviews();
+    } else {
+      alert('별점을 선택하세요');
+    }
   });
 
   // 수정 모달 입력필드에 리뷰 데이터 채우기
