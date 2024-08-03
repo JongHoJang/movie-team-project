@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         (review, index) => `
             <div class="reviewItem">
                 ${review.author} ${review.rating}<br>
-                ${review.review}<br>
+                ${replaceNewlineWord(review.review)}<br>
                 <button data-index="${index}" class="modifyBtn">수정</button>
                 <button data-index="${index}" class="deleteBtn">삭제</button>
             </div>
@@ -144,6 +144,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviewData = storedReviews[index];
     document.getElementById('modifyRating').value = reviewData.rating;
     document.getElementById('modifyReview').value = reviewData.review;
+  }
+
+  function replaceNewlineWord(reviewText) {
+    return reviewText.replaceAll('\n', '<br>');
   }
 
   displayReviews();
