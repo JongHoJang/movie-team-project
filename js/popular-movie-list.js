@@ -26,9 +26,9 @@ const createMovieCard = (movie) => {
 
   const card = document.createElement('div');
   const image = document.createElement('img');
-  // const titleElement = document.createElement("h2");
-  // const overviewElement = document.createElement("p");
-  // const voteAverageElement = document.createElement("p");
+  // const titleElement = document.createElement('h2');
+  // const overviewElement = document.createElement('p');
+  // const voteAverageElement = document.createElement('p');
 
   card.className = 'movie-card';
   // image.className = "poster-image";
@@ -53,6 +53,10 @@ const renderMovies = (movies) => {
   movies.forEach((movie) => {
     const movieCard = createMovieCard(movie);
     popMovieContainer.appendChild(movieCard);
+    // 영화 Id값 주소로 가지고 오는 코드 (+종호)
+    movieCard.onclick = () => {
+      window.location.href = `detailPage.html?id=${movie.id}`;
+    };
   });
 };
 
