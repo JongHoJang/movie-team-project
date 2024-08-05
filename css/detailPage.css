@@ -1,0 +1,142 @@
+/* 상단 타이틀 포스터 영역 */
+body {
+  background-color: #060d17;
+}
+
+main {
+  max-width: 1240px;
+  margin: auto;
+}
+
+.background-left {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: -1;
+  right: 50%;
+  background-color: #0c131e;
+}
+
+.autosize-poster {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+}
+
+.autosize-poster img {
+  height: 250px;
+  min-width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 상단 제목 영역 */
+.detail-poster-container {
+  /* position: relative; */
+  height: 250px;
+  /* display: flex; */
+  /* overflow: hidden; */
+  /* flex-wrap: wrap; */
+  /* align-content: flex-start; */
+  background-color: #0c131e;
+  color: white;
+}
+
+.detail-poster-content {
+  /* max-width: 1240px; */
+  /* height: 100%; */
+  /* min-width: 100%; */
+  display: flex;
+  width: 100%;
+  /* position: relative; */
+}
+
+.detail-poster-left {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0 0 60px;
+}
+
+.title-year {
+  display: flex;
+  align-items: baseline;
+}
+
+.movie-title {
+  margin-right: 10px;
+}
+
+.runtime {
+  margin-top: 10px;
+}
+
+.movie-runtime {
+  margin-right: 10px;
+}
+
+/* 영화 설명 */
+
+.detail-wrapper {
+  width: 1240px;
+  margin: auto;
+  background-color: #060d17;
+  color: white;
+}
+.detail-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.about-movie {
+  font-size: 26px;
+  width: 100%;
+  margin: 60px 0 10px 60px;
+  display: inline-block;
+}
+
+.datail-left {
+  margin: 30px 60px;
+  width: 700px;
+}
+
+.info-movie-contain {
+  margin-bottom: 40px;
+}
+
+.info-movie-title {
+  font-size: 16px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.info-movie-content {
+  font-size: 20px;
+}
+
+.datail-right {
+  width: 30%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.datail-right img {
+  width: 65%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.good-bad-btn-container {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
