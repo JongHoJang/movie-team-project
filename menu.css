@@ -1,0 +1,73 @@
+header {
+  background-color: #191a20;
+}
+
+header div {
+  background-color: #191a20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 30;
+  display: flex;
+  gap: 15px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  place-content: center;
+}
+
+ul li {
+  background-color: #f9c427;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+body {
+  background-color: #191a20;
+  color: #f9c427;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background-color: #191a20;
+  color: #f9c427;
+  text-align: left;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+.movie-card {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  flex: 0 0 auto;
+  justify-items: center;
+  display: inline-block;
+  margin: 15px;
+  padding: 10px;
+  width: 200px;
+  transition: transform 0.3s;
+}
+
+.movie-card:hover {
+  transform: scale(1.1);
+}
+
+.movie-card:hover .poster-image {
+  transform: scale(1.1);
+}
