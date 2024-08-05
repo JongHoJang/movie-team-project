@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HM.com</title>
     <script defer src="/js/script.js"></script>
+    <script defer src="/js/header-footer.js"></script>
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <header>
-      <div class="com">
+    <header class="header-container">
+      <div class="header-content">
+        <!-- <div class="com">
         <h1 onclick="window.location.reload()">한영닷컴</h1>
         <h6>한수빈 영화 닷컴</h6>
+      </div> -->
+        <div data-include-path="header.html"></div>
+
+        <form id="search" class="search">
+          <!-- <label>영화 검색</label> -->
+          <input
+            id="searchInput"
+            class="searchInput"
+            type="text"
+            placeholder="영화 제목을 검색하세요"
+            autocomplete="off"
+          />
+          <!-- <button id="searchBtn" class="searchBtn" type="submit">검색</button> -->
+        </form>
       </div>
-      <form id="search" class="search">
-        <label>영화 검색</label>
-        <input
-          id="searchInput"
-          class="searchInput"
-          type="text"
-          placeholder="영화 제목을 검색하세요"
-          autocomplete="off"
-        />
-        <button id="searchBtn" class="searchBtn" type="submit">검색</button>
-      </form>
     </header>
     <section id="movieList" class="movieList"></section>
   </body>
