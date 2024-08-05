@@ -4,52 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/normalize.css" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/mainPage.css" />
     <script defer src="/js/header-footer.js"></script>
   </head>
   <body>
-    <!-- Headers -->
     <header>
       <div data-include-path="header.html"></div>
+      <h1>Header Area</h1>
+
     </header>
 
-    <!-- Main -->
     <main>
-      <!-- 캐러셀 -->
-      <div class="main-crousel">
-        <h1>캐러셀 파트</h1>
-        <ul></ul>
+      <!-- banner 캐러셀 -->
+      <div class="banner">
+        <div class="banner-wrapper">
+          <ul class="banner-slides"></ul>
+
+          <!-- <div class="banner-button"> -->
+          <button class="prev" aria-label="Previous Slide">&#8249;</button>
+          <button class="next" aria-label="Next Slide">&#8250;</button>
+          <!-- </div> -->
+        </div>
       </div>
 
-      <!-- 카테고리별 영화 목록 -->
       <div class="main-movies">
-        <!-- Part 1 -->
-        <div class="">
-          <span>인기 영화</span>
-          <ul>
-            <li>Movie Box</li>
-          </ul>
-        </div>
+        <!-- ************************************** -->
+        <section class="popular-section">
+          <a href="#" class="popular-link">
+            <h1>Popular</h1>
+          </a>
+          <div class="popular-wrapper">
+            <ul class="popular-slides"></ul>
+          </div>
+        </section>
+        <!-- ************************************** -->
 
-        <!-- Part 2 -->
-        <div>
-          <span>상영중</span>s
-          <ul>
-            <li>Movie Box</li>
-          </ul>
-        </div>
+        <section class="top-rated-section">
+          <a href="#" class="top-rated-link">
+            <h1>Top Rated</h1>
+          </a>
+          <div class="top-rated-wrapper">
+            <ul class="top-rated-slides"></ul>
+          </div>
+        </section>
 
-        <!-- Part 3 -->
-        <div>
-          <span>높은 평점</span>
-          <ul>
-            <li>Movie Box</li>
-          </ul>
-        </div>
+        <section class="now-playing-section">
+          <a href="#" class="now-playing-link">
+            <h1>Now Playing</h1>
+          </a>
+          <div class="now-playing-wrapper">
+            <ul class="now-playing-slides"></ul>
+          </div>
+        </section>
+
+        <!-- 캐러셀 테스트 섹션 start -->
+        <section class="test-now-playing-section">
+          <a href="#" class="test-now-playing-link">
+            <h1>Now Playing</h1>
+          </a>
+          <div class="test-now-playing-wrapper">
+            <ul class="test-now-playing-slides"></ul>
+
+            <button class="test-prev" aria-label="Previous Slide">&#8249;</button>
+            <button class="test-next" aria-label="Next Slide">&#8250;</button>
+          </div>
+        </section>
+        <!-- 캐러셀 테스트 섹션 end -->
       </div>
+
+      <button class="move-top-button" type="button">&laquo;</button>
+      <!-- <button class="move-top-button" type="button">Top</button> -->
     </main>
 
-    <!-- Footer -->
-    <footer></footer>
+    <footer>
+      <h1>Footer Area</h1>
+    </footer>
+
+    <script src="./apiMain.js"></script>
+    <script src="./topButton.js"></script>
+    <script src="./bannerCarousel.js"></script>
+    <script src="./animationFrame.js"></script>
+    <script src="./testSection.js"></script>
   </body>
 </html>
