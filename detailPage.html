@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/detailPage.css" />
+    <script defer src="/js/header-footer.js"></script>
+    <script defer src="js/datail-page.js"></script>
+  </head>
+  <body>
+    <!-- Headers -->
+    <header>
+      <div data-include-path="header.html"></div>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <!-- 타이틀, 포스터 영역 -->
+      <div class="autosize-poster"><img class="autosize-poster-img" src= /></div>
+      <div class="background-left"></div>
+
+      <div class="detail-poster-container">
+        <div class="detail-poster-content">
+          <div class="detail-poster-left">
+            <div class="title-year">
+              <h1 class="movie-title"></h1>
+              <span class="release-year"></span>
+            </div>
+            <div class="runtine-rate">
+              <span class="movie-runtime"></span>
+              <span class="movie-rate"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 영화 설명 -->
+      <div class="detail-wrapper">
+        <h1 class="about-movie">About the Movie</h1>
+        <div class="detail-content">
+          <div class="datail-left">
+            <div class="info-movie-contain">
+              <div class="info-movie-title"></div>
+              <span class="info-movie-content" id="movie-director">Mark Dindal</span>
+            </div>
+            <div class="info-movie-contain">
+              <div class="info-movie-title">배우</div>
+              <div class="actor-container">
+                <img src="#" />
+                <span class="info-movie-content">배우들</span>
+              </div>
+            </div>
+            <div class="info-movie-contain">
+              <div class="info-movie-title">장르</div>
+              <span class="info-movie-content" id="movie-genre-ids"></span>
+            </div>
+            <div class="info-movie-contain">
+              <div class="info-movie-title">줄거리</div>
+              <p id="movie-overview"></p>
+            </div>
+          </div>
+          <div class="datail-right">
+            <img class="poster-img" src= />
+            <div class="good-bad-btn-container">
+              <button class="good-btn">좋아요 20개</button>
+              <button class="bad-btn">싫어요 20개</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 리뷰 영역 -->
+
+      <!-- 연관 영화 -->
+      <div class="related-movies-container">
+        <div>연관 영화</div>
+        <ul>
+          <li>Movie Box</li>
+        </ul>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer></footer>
+  </body>
+</html>
