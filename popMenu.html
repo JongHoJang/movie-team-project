@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>비전공자들 P</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="menuStyle.css" />
+  </head>
+  <body>
+    <!--Header  -->
+    <header>
+      <div>
+        <!-- 로고 -->
+        <div>비전공자들</div>
+        <nav>
+          <ul>
+            <li>HOME</li>
+            <li>Popular</li>
+            <li>Top Rate</li>
+            <li>Now Playing</li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- main -->
+    <main>
+      <div>
+        <h2>Movies</h2>
+        <form class="" onsubmit="search_movie(event)">
+          <input class="" placeholder="영화 검색..." />
+          <button id="">검색</button>
+        </form>
+        <ul>
+          <li>Drama</li>
+          <li>Action</li>
+          <li>Comedy</li>
+          <li>etc</li>
+        </ul>
+
+        <select name="" id="">
+          <option value="">이름순</option>
+          <option value="">평점순</option>
+          <option value="">개봉일순</option>
+          <option value="">이름순</option>
+        </select>
+      </div>
+
+      <div>
+        <h2>Popular</h2>
+        <section class="popMovies">
+          <div id="popMovieContainer"></div>
+        </section>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <p>비전공자들</p>
+      <br />
+      <p>팀원 | 이윤지 이창현 장종호 한수빈</p>
+    </footer>
+
+    <script src="1.js"></script>
+  </body>
+</html>
