@@ -1,7 +1,7 @@
-const likeBtn = document.getElementById('likeBtn');
-const likeCount = document.getElementById('likeCount');
-const hateBtn = document.getElementById('hateBtn');
-const hateCount = document.getElementById('hateCount');
+const likeBtn = document.getElementById('like-btn');
+const likeCount = document.getElementById('like-count');
+const hateBtn = document.getElementById('hate-btn');
+const hateCount = document.getElementById('hate-count');
 
 let likeCountValue;
 let hateCountValue;
