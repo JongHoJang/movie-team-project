@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>비전공자들 N</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="menu.css" />
+    <link rel="stylesheet" href="/css/menu.css" />
   </head>
   <body>
     <!--Header  -->
@@ -25,11 +25,11 @@
 
     <!-- main -->
     <main>
-      <div>
-        <h2>Movies</h2>
-        <form class="" onsubmit="search_movie(event)">
-          <input class="" placeholder="" />
-          <button id="">검색</button>
+      <div class="searchMain">
+        <h1>Now Playing &#127909;</h1>
+        <form id="search-form" class="search-form" onsubmit="search_movie(event)">
+          <input id="search-box" class="search-box" placeholder="영화 검색..." />
+          <button id="searchBtn">검색</button>
         </form>
         <ul>
           <li>Drama</li>
@@ -38,16 +38,16 @@
           <li>etc</li>
         </ul>
 
-        <select name="" id="">
+        <!-- <select name="" id="">
           <option value="">이름순</option>
           <option value="">평점순</option>
           <option value="">개봉일순</option>
           <option value="">이름순</option>
-        </select>
+        </select> -->
       </div>
 
       <div>
-        <h2>Now Playing</h2>
+        <!-- <h2>Now Playing</h2> -->
         <section>
           <section class="nowMovies">
             <div id="NowMovieContainer"></div>
@@ -62,6 +62,6 @@
       <p>팀원 | 이윤지 이창현 장종호 한수빈</p>
     </footer>
 
-    <script src="1.js"></script>
+    <script src="js/now-menu.js"></script>
   </body>
 </html>
