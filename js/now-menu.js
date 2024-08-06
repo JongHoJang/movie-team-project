@@ -32,11 +32,13 @@ const createNowMovieCard = (movie) => {
 };
 
 // 영화 목록
-const renderMovies = (movies) => {
+const renderNowMovies = (movies) => {
+  const nowMovieContainer = document.getElementById('NowMovieContainer');
+  nowMovieContainer.innerHTML = '';
+
   movies.forEach((movie) => {
-    const movieCard = createMovieCard(movie);
-    popMovieContainer.appendChild(movieCard);
-    // 영화 Id값 주소로 가지고 오는 코드 (+종호)
+    const movieCard = createNowMovieCard(movie);
+    nowMovieContainer.appendChild(movieCard);
     movieCard.onclick = () => {
       window.location.href = `detailPage.html?id=${movie.id}`;
     };
