@@ -159,3 +159,32 @@ main {
   width: 150px;
   border-radius: 8px;
 }
+
+/* 연관영화 */
+#info-relative-movie-title {
+  margin: 0 60px;
+  color: white;
+  font-size: 16px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+#relative-movies-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 60px;
+}
+
+/* .relative-movie-contain {
+  margin-right: 20px;
+} */
+
+.relative-movie-img {
+  width: 200px;
+  border-radius: 8px;
+}
+
+.relative-movie-title {
+  width: 200px;
+  color: white;
+}
