@@ -1,13 +1,9 @@
-// 리뷰 데이터 로드 및 초기화
-const url = new URL(window.location.search);
-
-// URLSearchParams 객체
+const url = new URL(window.location.href);
 const urlParams = url.searchParams;
+const movieId = urlParams.get('id');
+console.log(movieId);
 
-// URLSearchParams.get()
-const id = urlParams.get('id');
-
-let storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+let storedReviews = JSON.parse(localStorage.getItem(`${movieId}`)) || [];
 
 const reviewForm = document.getElementById('review-form');
 const reviewContainer = document.getElementById('reviews');
@@ -91,7 +87,7 @@ document.getElementById('confirm-password').addEventListener('click', () => {
   if (actionType === 'delete' && reviewToDeleteIndex !== null) {
     handlePasswordConfirm(reviewToDeleteIndex, () => {
       storedReviews.splice(reviewToDeleteIndex, 1);
-      localStorage.setItem('reviews', JSON.stringify(storedReviews));
+      localStorage.setItem(`${movieId}`, JSON.stringify(storedReviews));
       displayReviews();
       reviewToDeleteIndex = null;
     });
@@ -126,7 +122,7 @@ document.getElementById('confirm-modify-review').addEventListener('click', () =>
         review: updatedReview
       };
 
-      localStorage.setItem('reviews', JSON.stringify(storedReviews));
+      localStorage.setItem(`${movieId}`, JSON.stringify(storedReviews));
       displayReviews();
       closeModal(modifyModal);
       reviewToModifyIndex = null;
@@ -148,7 +144,7 @@ reviewForm.addEventListener('submit', (event) => {
 
   if (rating !== 'none') {
     storedReviews.push({ author, rating, review: reviewText, password });
-    localStorage.setItem('reviews', JSON.stringify(storedReviews));
+    localStorage.setItem(`${movieId}`, JSON.stringify(storedReviews));
 
     reviewForm.reset();
     displayReviews();

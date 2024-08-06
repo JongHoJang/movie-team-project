@@ -1,3 +1,8 @@
+const url = new URL(window.location.href);
+const urlParams = url.searchParams;
+const movieId = urlParams.get('id');
+console.log(movieId);
+
 const likeBtn = document.getElementById('like-btn');
 const likeCount = document.getElementById('like-count');
 const hateBtn = document.getElementById('hate-btn');
@@ -9,7 +14,7 @@ let hateCountValue;
 displaySavedCountingValue();
 
 function displaySavedCountingValue() {
-  const countValue = JSON.parse(localStorage.getItem('countValue'));
+  const countValue = JSON.parse(localStorage.getItem(`${movieId}`));
   if (countValue !== null) {
     likeCount.innerText = countValue.like;
     hateCount.innerText = countValue.hate;
@@ -24,7 +29,7 @@ function saveCountingValue(likeCountValue, hateCountValue) {
     like: likeCountValue,
     hate: hateCountValue
   };
-  localStorage.setItem('countValue', JSON.stringify(countValue));
+  localStorage.setItem(`${movieId}`, JSON.stringify(countValue));
 }
 
 likeBtn.addEventListener('click', () => {
