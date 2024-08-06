@@ -29,26 +29,6 @@
       </div>
 
       <div class="main-movies">
-        <!-- ************************************** -->
-        <section class="popular-section">
-          <a href="#" class="popular-link">
-            <h1>Popular</h1>
-          </a>
-          <div class="popular-wrapper">
-            <ul class="popular-slides"></ul>
-          </div>
-        </section>
-        <!-- ************************************** -->
-
-        <section class="top-rated-section">
-          <a href="#" class="top-rated-link">
-            <h1>Top Rated</h1>
-          </a>
-          <div class="top-rated-wrapper">
-            <ul class="top-rated-slides"></ul>
-          </div>
-        </section>
-
         <section class="now-playing-section">
           <a href="#" class="now-playing-link">
             <h1>Now Playing</h1>
@@ -58,23 +38,33 @@
           </div>
         </section>
 
-        <!-- 캐러셀 테스트 섹션 start -->
-        <section class="test-now-playing-section">
-          <a href="#" class="test-now-playing-link">
-            <h1>Now Playing</h1>
+        <section class="popular-section">
+          <a href="#" class="popular-link">
+            <h1>Popular</h1>
           </a>
-          <div class="test-now-playing-wrapper">
-            <ul class="test-now-playing-slides"></ul>
+          <div class="popular-wrapper">
+            <ul class="popular-slides"></ul>
 
-            <button class="test-prev" aria-label="Previous Slide">&#8249;</button>
-            <button class="test-next" aria-label="Next Slide">&#8250;</button>
+            <button class="popular-prev" aria-label="Previous Slide">&#8249;</button>
+            <button class="popular-next" aria-label="Next Slide">&#8250;</button>
           </div>
         </section>
-        <!-- 캐러셀 테스트 섹션 end -->
+
+        <section class="top-rated-section">
+          <a href="#" class="top-rated-link">
+            <h1>Top Rated</h1>
+          </a>
+          <div class="top-rated-wrapper">
+            <ul class="top-rated-slides"></ul>
+
+            <button class="top-rated-prev" aria-label="Previous Slide">&#8249;</button>
+            <button class="top-rated-next" aria-label="Next Slide">&#8250;</button>
+          </div>
+        </section>
       </div>
 
-      <button class="move-top-button" type="button">&laquo;</button>
-      <!-- <button class="move-top-button" type="button">Top</button> -->
+      <!-- <button class="move-top-button" type="button">&laquo;</button> -->
+      <button class="move-top-button" type="button"><img src="./arrow-144-xxl.png" alt="" /></button>
     </main>
 
     <footer>
@@ -82,9 +72,5 @@
     </footer>
 
     <script src="./apiMain.js"></script>
-    <script src="./topButton.js"></script>
-    <script src="./bannerCarousel.js"></script>
-    <script src="./animationFrame.js"></script>
-    <script src="./testSection.js"></script>
   </body>
 </html>
