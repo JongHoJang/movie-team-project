@@ -97,6 +97,7 @@ header h1 {
   width: 840px;
   height: 500px;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .banner-slides li:not(:last-child) {
@@ -105,13 +106,15 @@ header h1 {
 
 .banner-slides li img {
   display: block;
-  /* width: 100%;
-  height: 500px; */
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  transition: transform 200ms ease-in-out;
 }
 
+.banner-slides li img:hover {
+  transform: scale(1.1);
+}
 /* banner button */
 .banner button {
   display: block;
@@ -223,6 +226,7 @@ header h1 {
   display: block;
   width: 240px;
   height: 360px;
+  overflow: hidden;
 }
 
 .popular-slides li:not(:last-child),
@@ -236,6 +240,12 @@ header h1 {
   width: 240px;
   height: 100%;
   border-radius: 10px;
+  transition: transform 200ms ease-in-out;
+}
+
+.popular-slides li img:hover,
+.top-rated-slides li img:hover {
+  transform: scale(1.1);
 }
 
 /* popular, top-rated button */

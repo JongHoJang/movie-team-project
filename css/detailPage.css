@@ -165,13 +165,13 @@ main {
 
 #relative-movies-container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin: 20px 60px;
 }
 
-/* .relative-movie-contain {
+.relative-movie-contain {
   margin-right: 20px;
-} */
+}
 
 .relative-movie-img {
   width: 200px;

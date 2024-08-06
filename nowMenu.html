@@ -16,7 +16,7 @@
     <!-- main -->
     <main>
       <div class="searchMain">
-        <h1>Now Playing &#127909;</h1>
+        <h1 class="menu-title">Now Playing &#127909;</h1>
         <form id="search-form" class="search-form" onsubmit="search_movie(event)">
           <input id="search-box" class="search-box" placeholder="영화 검색..." />
           <button id="searchBtn">검색</button>
@@ -27,22 +27,20 @@
           <li>Comedy</li>
           <li>etc</li>
         </ul>
-
-        <!-- <select name="" id="">
-          <option value="">이름순</option>
-          <option value="">평점순</option>
-          <option value="">개봉일순</option>
-          <option value="">이름순</option>
-        </select> -->
       </div>
 
       <div>
-        <!-- <h2>Now Playing</h2> -->
         <section>
           <section class="nowMovies">
             <div id="NowMovieContainer"></div>
           </section>
         </section>
+      </div>
+      <div id="noResultModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <p>검색한 결과가 나오지 않습니다.</p>
+        </div>
       </div>
     </main>
     <!-- footer -->
