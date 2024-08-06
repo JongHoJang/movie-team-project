@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/detailPage.css" />
     <script defer src="/js/header-footer.js"></script>
-    <script defer src="js/datail-page.js"></script>
+    <script defer src="js/detail-page.js"></script>
+    <script defer src="js/detail-page-genre.js"></script>
   </head>
   <body>
     <!-- Headers -->
@@ -42,15 +43,12 @@
         <div class="detail-content">
           <div class="datail-left">
             <div class="info-movie-contain">
-              <div class="info-movie-title"></div>
+              <div class="info-movie-title">감독</div>
               <span class="info-movie-content" id="movie-director">Mark Dindal</span>
             </div>
             <div class="info-movie-contain">
               <div class="info-movie-title">배우</div>
-              <div class="actor-container">
-                <img src="#" />
-                <span class="info-movie-content">배우들</span>
-              </div>
+              <div class="actor-container"></div>
             </div>
             <div class="info-movie-contain">
               <div class="info-movie-title">장르</div>
@@ -74,12 +72,8 @@
       <!-- 리뷰 영역 -->
 
       <!-- 연관 영화 -->
-      <div class="related-movies-container">
-        <div>연관 영화</div>
-        <ul>
-          <li>Movie Box</li>
-        </ul>
-      </div>
+      <div class="info-movie-title" id="info-relative-movie-title">연관 영화</div>
+      <div id="relative-movies-container"></div>
     </main>
 
     <!-- Footer -->

@@ -79,8 +79,9 @@ main {
   margin-right: 10px;
 }
 
+/**********************/
 /* 영화 설명 */
-
+/**********************/
 .detail-wrapper {
   width: 1240px;
   margin: auto;
@@ -91,6 +92,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  width: 100%;
 }
 
 .about-movie {
@@ -125,7 +127,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  margin-right: 30px;
 }
 
 .datail-right img {
@@ -139,4 +141,50 @@ main {
   display: flex;
   justify-content: space-around;
   width: 80%;
+}
+
+.actor-container {
+  display: flex;
+}
+
+.actor-contain {
+  width: 100%;
+  margin-left: 10px;
+}
+.movie-actor-name {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.movie-actor-img {
+  width: 150px;
+  border-radius: 8px;
+}
+
+/* 연관영화 */
+#info-relative-movie-title {
+  margin: 0 60px;
+  color: white;
+  font-size: 16px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+#relative-movies-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 60px;
+}
+
+/* .relative-movie-contain {
+  margin-right: 20px;
+} */
+
+.relative-movie-img {
+  width: 200px;
+  border-radius: 8px;
+}
+
+.relative-movie-title {
+  width: 200px;
+  color: white;
 }
