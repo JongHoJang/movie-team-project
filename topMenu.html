@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>비전공자들 T</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="menu.css" />
+    <link rel="stylesheet" href="/css/menu.css" />
   </head>
   <body>
     <!--Header  -->
@@ -25,11 +25,11 @@
 
     <!-- main -->
     <main>
-      <div>
-        <h2>Movies</h2>
-        <form class="" onsubmit="search_movie(event)">
-          <input class="" placeholder="" />
-          <button id="">검색</button>
+      <div class="searchMain">
+        <h1>Top Rate &#127916;</h1>
+        <form id="search-form" class="search-form" onsubmit="search_movie(event)">
+          <input id="search-box" class="search-box" placeholder="영화 검색..." />
+          <button id="searchBtn">검색</button>
         </form>
         <ul>
           <li>Drama</li>
@@ -37,15 +37,15 @@
           <li>Comedy</li>
           <li>etc</li>
         </ul>
-        <select name="" id="">
+        <!-- <select name="" id="">
           <option value="">평점순</option>
           <option value="">개봉일순</option>
           <option value="">이름순</option>
-        </select>
+        </select> -->
       </div>
 
       <div>
-        <h2>Top Rated Movies</h2>
+        <!-- <h2>Top Rated Movies</h2> -->
         <section>
           <section class="topMovies">
             <div id="TopMovieContainer"></div>
@@ -61,6 +61,6 @@
       <p>팀원 | 이윤지 이창현 장종호 한수빈</p>
     </footer>
 
-    <script src="1.js"></script>
+    <script src="js/top-menu.js"></script>
   </body>
 </html>

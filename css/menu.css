@@ -71,3 +71,7 @@ footer {
 .movie-card:hover .poster-image {
   transform: scale(1.1);
 }
+
+.searchMain {
+  text-align: center;
+}
