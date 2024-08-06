@@ -39,6 +39,9 @@ const renderMovies = (movies) => {
   movies.forEach((movie) => {
     const movieCard = createMovieCard(movie);
     popMovieContainer.appendChild(movieCard);
+    movieCard.onclick = () => {
+      window.location.href = `detailPage.html?id=${movie.id}`;
+    };
   });
 };
 

@@ -39,6 +39,9 @@ const renderTopMovies = (movies) => {
   movies.forEach((movie) => {
     const movieCard = createTopMovieCard(movie);
     topMovieContainer.appendChild(movieCard);
+    movieCard.onclick = () => {
+      window.location.href = `detailPage.html?id=${movie.id}`;
+    };
   });
 };
 
