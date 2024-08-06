@@ -1,4 +1,12 @@
 // 리뷰 데이터 로드 및 초기화
+const url = new URL(window.location.search);
+
+// URLSearchParams 객체
+const urlParams = url.searchParams;
+
+// URLSearchParams.get()
+const id = urlParams.get('id');
+
 let storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
 
 const reviewForm = document.getElementById('review-form');
