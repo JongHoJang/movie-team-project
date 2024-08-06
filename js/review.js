@@ -1,13 +1,9 @@
-// 리뷰 데이터 로드 및 초기화
-const url = new URL(window.location.search);
+const reviewUrl = new URL(window.location.href);
+const reviewUrlParams = reviewUrl.searchParams;
+const reviewMovieId = reviewUrlParams.get('id');
+console.log(reviewMovieId);
 
-// URLSearchParams 객체
-const urlParams = url.searchParams;
-
-// URLSearchParams.get()
-const id = urlParams.get('id');
-
-let storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+let storedReviews = JSON.parse(localStorage.getItem(`movie_${reviewMovieId}`)) || [];
 
 const reviewForm = document.getElementById('review-form');
 const reviewContainer = document.getElementById('reviews');
@@ -24,10 +20,16 @@ function displayReviews() {
     .map(
       (review, index) => `
             <div class="review-item">
-                ${review.author} ${review.rating}<br>
-                ${replaceNewlineWord(review.review)}<br>
-                <button data-index="${index}" class="modify-btn">Edit</button>
-                <button data-index="${index}" class="delete-btn">Delete</button>
+              <div class="review-item-top">
+                ${review.author} ${review.rating}
+                <div class="review-item-bottom">
+                  <button data-index="${index}" class="modify-btn"><i class="fa-solid fa-pen"></i></button>
+                  <button data-index="${index}" class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+              </div>
+              <div class="review-item-middle">
+                ${replaceNewlineWord(review.review)}
+              </div>
             </div>
         `
     )
@@ -36,7 +38,7 @@ function displayReviews() {
   // 리뷰 삭제 버튼 클릭 시 비밀번호 확인 모달 열기
   document.querySelectorAll('.delete-btn').forEach((button) => {
     button.addEventListener('click', (event) => {
-      reviewToDeleteIndex = parseInt(event.target.getAttribute('data-index'));
+      reviewToDeleteIndex = Number(event.target.getAttribute('data-index'));
       console.log('삭제할 리뷰 인덱스:', reviewToDeleteIndex);
       openModal(confirmModal, 'delete');
     });
@@ -45,7 +47,7 @@ function displayReviews() {
   // 리뷰 수정 버튼 클릭 시 비밀번호 확인 모달 열기
   document.querySelectorAll('.modify-btn').forEach((button) => {
     button.addEventListener('click', (event) => {
-      reviewToModifyIndex = parseInt(event.target.getAttribute('data-index'));
+      reviewToModifyIndex = Number(event.target.getAttribute('data-index'));
       console.log('수정할 리뷰 인덱스:', reviewToModifyIndex);
       openModal(confirmModal, 'modify');
     });
@@ -91,7 +93,7 @@ document.getElementById('confirm-password').addEventListener('click', () => {
   if (actionType === 'delete' && reviewToDeleteIndex !== null) {
     handlePasswordConfirm(reviewToDeleteIndex, () => {
       storedReviews.splice(reviewToDeleteIndex, 1);
-      localStorage.setItem('reviews', JSON.stringify(storedReviews));
+      localStorage.setItem(`movie_${reviewMovieId}`, JSON.stringify(storedReviews));
       displayReviews();
       reviewToDeleteIndex = null;
     });
@@ -117,6 +119,7 @@ document.getElementById('confirm-modify-review').addEventListener('click', () =>
     const updatedReview = document.getElementById('modify-review').value;
     console.log('수정할 별점:', updatedRating);
     console.log('수정할 리뷰:', updatedReview);
+    console.log('수정할 리뷰 인덱스:', reviewToModifyIndex);
 
     if (updatedRating !== 'none') {
       // 데이터 업데이트
@@ -126,7 +129,7 @@ document.getElementById('confirm-modify-review').addEventListener('click', () =>
         review: updatedReview
       };
 
-      localStorage.setItem('reviews', JSON.stringify(storedReviews));
+      localStorage.setItem(`movie_${reviewMovieId}`, JSON.stringify(storedReviews));
       displayReviews();
       closeModal(modifyModal);
       reviewToModifyIndex = null;
@@ -148,7 +151,7 @@ reviewForm.addEventListener('submit', (event) => {
 
   if (rating !== 'none') {
     storedReviews.push({ author, rating, review: reviewText, password });
-    localStorage.setItem('reviews', JSON.stringify(storedReviews));
+    localStorage.setItem(`movie_${reviewMovieId}`, JSON.stringify(storedReviews));
 
     reviewForm.reset();
     displayReviews();

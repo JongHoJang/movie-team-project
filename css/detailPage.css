@@ -137,12 +137,6 @@ main {
   border-radius: 8px;
 }
 
-.good-bad-btn-container {
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
-}
-
 .actor-container {
   display: flex;
 }
@@ -197,20 +191,131 @@ main {
   margin: auto;
   background-color: #060d17;
   color: white;
+  border-top: 2px solid #161f2e;
 }
+
 #review-section,
 #creat-review {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
+  margin-bottom: 150px;
 }
-#review {
-  width: 600px;
-  height: 100px;
-  resize: none;
+.review-item {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.review-item-top {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.review-item-middle {
+  display: flex;
+  color: #7b7d83;
+}
+.review-item-bottom {
+  display: flex;
+  color: #d5d5d536;
+  bottom: 0px;
+  gap: 6px;
+}
+/* .review-item-bottom {
+  display: flex;
+  position: absolute;
+  right: -130px;
+  color: #505050;
+  bottom: 0px;
+  gap: 8px;
+} */
+.modify-btn,
+.delete-btn {
+  all: unset;
+}
+.modify-btn:hover,
+.delete-btn:hover {
+  cursor: pointer;
+}
+.form-group-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+  gap: 5px;
+  height: 28px;
 }
 
+#author {
+  width: 230px;
+  border-radius: 3px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  background-color: #222c38;
+  border: none;
+  color: white;
+}
+#rating {
+  width: 150px;
+  border-radius: 3px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  background-color: #222c38;
+  border: none;
+  color: #707575;
+}
+#password {
+  border-radius: 3px;
+  padding-left: 10px;
+  background-color: #222c38;
+  border: none;
+  color: white;
+}
+.form-group-bottom {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+#review {
+  display: flex;
+  width: 700px;
+  height: 90px;
+  resize: none;
+  border-radius: 13px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #222c38;
+  border: none;
+  color: white;
+}
+#submit-btn {
+  display: flex;
+  position: absolute;
+  bottom: -70px;
+  height: 40px;
+  width: 300px;
+  border-radius: 13px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9c427;
+  font-weight: bold;
+  border: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+#submit-btn:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.316);
+  transform: scale(1.05);
+  border: 3px solid #f9c427;
+  color: #f9c427;
+}
 /* 모달 */
 
 .confirm-modal {
@@ -225,10 +330,15 @@ main {
   height: 20%;
   z-index: 1000;
   max-width: 500px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #323335f7;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+.confirm-message {
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 35px;
+  margin-bottom: 10px;
+}
 .confirm-modal-content {
   position: relative;
   display: flex;
@@ -238,14 +348,14 @@ main {
 .close-confirm-modal {
   position: absolute;
   right: 7px;
-  font-size: 18px;
+  font-size: 25px;
 }
+
 .confirm-password-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5%;
 }
 
 .confirm-password-content-box {
@@ -255,6 +365,30 @@ main {
   gap: 30px;
   margin-top: 6%;
   cursor: pointer;
+  height: 28px;
+}
+
+#modal-password-input {
+  width: 200px;
+  border: none;
+  border-radius: 4px;
+  padding-left: 10px;
+}
+
+#confirm-password {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d3d3d3;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+#confirm-password:hover,
+#confirm-modify-review:hover {
+  cursor: pointer;
+  background-color: #a6a6a6;
 }
 
 .close-confirm-modal:hover,
@@ -273,10 +407,10 @@ main {
   padding: 20px;
   border-radius: 8px;
   width: 80%;
-  height: 25%;
+  height: 35%;
   z-index: 1000;
   max-width: 500px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #323335f7;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -289,7 +423,7 @@ main {
 .close-modify-modal {
   position: absolute;
   right: 7px;
-  font-size: 18px;
+  font-size: 25px;
 }
 
 .modify-review-content {
@@ -298,9 +432,66 @@ main {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  margin-top: 10%;
+  margin-top: 35px;
+}
+.modify-message {
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+#modify-rating {
+  width: 150px;
+  border-radius: 3px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  border: none;
+  color: #707575;
+}
+#modify-review {
+  display: flex;
+  width: 400px;
+  height: 80px;
+  resize: none;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  color: black;
 }
 
 #confirm-modify-review {
-  margin: 5% 0;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d3d3d3;
+  width: 400px;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+/* 리액션 버튼 */
+.good-bad-btn-container {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+.reaction-btn {
+  all: unset;
+  font-size: 20px;
+  color: white;
+  transition: transform 0.2s ease, color 0.1s ease;
+}
+.reaction-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  color: #f9c427;
+}
+
+#like-count,
+#hate-count {
+  margin-left: 10px;
 }
