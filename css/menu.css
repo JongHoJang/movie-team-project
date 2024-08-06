@@ -9,12 +9,27 @@ ul {
 }
 
 ul li {
-  background-color: #f9c427;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
   transition: background-color 0.3s;
+}
+
+.toggle-btn {
+  color: white;
+  padding: 14px 30px;
+  cursor: pointer;
+  border-radius: 100px;
+  background-color: #303030;
+}
+
+.toggle-btn:hover {
+  color: white;
+  padding: 14px 30px;
+  cursor: pointer;
+  border-radius: 100px;
+  outline: 1px solid #f9c427;
+}
+
+.toggle-btn.active {
+  background-color: #f9c427;
 }
 
 body {
@@ -31,6 +46,17 @@ footer {
   padding: 20px 0;
   margin-top: 20px;
 }
+
+#popMovieContainer,
+#TopMovieContainer,
+#NowMovieContainer {
+  display: flex;
+  margin: 0 auto;
+  padding: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .movie-card {
   background-color: white;
   border: 1px solid white;
@@ -54,4 +80,13 @@ footer {
 
 .searchMain {
   text-align: center;
+}
+
+.menu-title {
+  font-size: 40px;
+  margin-top: 80px;
+}
+
+.search-form {
+  margin: 50px 0 25px 0;
 }
