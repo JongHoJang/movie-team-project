@@ -5,32 +5,18 @@ const API_URL = 'https://api.themoviedb.org/3/';
 const IMAGE_BASE_URL = 'http://image.tmdb.org/t/p/';
 const apiKey = '838d721e4cc805544c744295d5d45809';
 
-const GENRES = {
-  28: 'Action',
-  12: 'Adventure',
-  16: 'Animation',
-  35: 'Comedy',
-  80: 'Crime',
-  99: 'Documentary',
-  18: 'Drama',
-  10751: 'Family',
-  14: 'Fantasy',
-  36: 'History',
-  27: 'Horror',
-  10402: 'Music',
-  9648: 'Mystery',
-  10749: 'Romance',
-  878: 'Science Fiction',
-  10770: 'TV Movie',
-  53: 'Thriller',
-  10752: 'War',
-  37: 'Western'
-};
-
 // 영화 정보
 async function fetchMovieContent() {
   const response = await fetch(`${API_URL}movie/${id}?api_key=${apiKey}&language=en-US`);
   const data = await response.json();
+  return data;
+}
+
+// 선택된 영화 캐스팅 정보
+async function fetchMovieCredits() {
+  const response = await fetch(`${API_URL}movie/${id}/credits?api_key=${apiKey}&language=en-US`);
+  const data = await response.json();
+  // console.log(data.cast);
   return data;
 }
 
@@ -39,7 +25,10 @@ async function fetchMovieContent() {
 // dom 조작 영역
 async function displayMovieDetails() {
   const movieDetails = await fetchMovieContent();
-  if (movieDetails) {
+  const movieCredits = await fetchMovieCredits();
+  if ((movieDetails, movieCredits)) {
+    // 장르
+
     // 타이틀
     document.querySelector('.movie-title').textContent = movieDetails.title;
 
@@ -57,24 +46,49 @@ async function displayMovieDetails() {
     // 점수
     document.querySelector('.movie-rate').textContent = `${(movieDetails.vote_average * 10).toFixed(2)} 점`;
 
+    //
+    //
     // About the movie
     // 세로 포스터
     document.querySelector('.poster-img').src = `https://image.tmdb.org/t/p/original${movieDetails.poster_path}`;
 
     // 감독
-    document.querySelector('#movie-director').textContent = movieDetails.title;
+    const director = movieCredits.crew.find((member) => member.job === 'Director');
+    if (director) {
+      document.querySelector('#movie-director').textContent = `${director.name}`;
+    } else {
+      document.querySelector('#movie-director').textContent = `감독 정보가 없습니다.`;
+    }
 
-    // 장르
-    // document.querySelector('#movie-genre-ids').textContent = movieDetails.genre_ids[0];
+    // 배우(이미지,이름)
+    fetchMovieCredits().then((movieCredits) => {
+      const top5Cast = movieCredits.cast.slice(0, 5);
+      const castContainer = document.querySelector('.actor-container');
+      castContainer.innerHTML = '';
+
+      top5Cast.forEach((actor) => {
+        const actorDiv = document.createElement('div');
+        actorDiv.classList.add('actor-contain');
+
+        const actorName = document.createElement('p');
+        actorName.classList.add('movie-actor-name');
+        actorName.textContent = actor.name;
+
+        const actorImage = document.createElement('img');
+        actorImage.src = `https://image.tmdb.org/t/p/w500${actor.profile_path}`;
+        actorImage.alt = `${actor.name} profile image`;
+        actorImage.classList.add('movie-actor-img');
+
+        actorDiv.appendChild(actorImage);
+        actorDiv.appendChild(actorName);
+        castContainer.appendChild(actorDiv);
+      });
+    });
 
     // 줄거리
     document.querySelector('#movie-overview').textContent = movieDetails.overview;
-  } else {
-    document.querySelector('.movie-title').textContent = 'Movie not found';
-    document.querySelector('.release-year').style.display = 'none';
-    document.querySelector('.movie-runtime').style.display = 'none';
-    document.querySelector('.movie-rate').style.display = 'none';
   }
 }
 
 displayMovieDetails();
+fetchMovieCredits();

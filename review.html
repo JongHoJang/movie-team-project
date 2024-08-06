@@ -13,15 +13,15 @@
 </head>
 
 <body>
-    <div id="reviewContainer">
-        <div id="reviewSection">
+    <div id="review-container">
+        <div id="review-section">
             <h1>작성된 리뷰들</h1>
             <div id="reviews"></div>
         </div>
-        <div id="creatReview">
+        <div id="creat-review">
             <h2>리뷰 작성</h2>
-            <form id="reviewForm">
-                <div id="formGroup">
+            <form id="review-form">
+                <div class="form-group">
                     <input type="text" id="author" placeholder="작성자" autocomplete="off" maxlength="7" required>
                     <select id="rating" class="rating" required>
                         <option value="none">별점 선택</option>
@@ -33,7 +33,7 @@
                     </select>
                     <input type="password" id="password" placeholder="비밀번호" minlength="4" maxlength="4" required>
                 </div>
-                <div id="formGroup">
+                <div class="form-group">
                     <textarea id="review" placeholder="리뷰글 (최대 100자)" required></textarea>
                 </div>
                 <button type="submit">등록</button>
@@ -42,22 +42,22 @@
     </div>
 
     <!-- 비밀번호 확인 모달 창 -->
-    <div id="confirmModal" class="confirmModal">
-        <div class="confirmModalContent">
-            <span class="closeConfirmModal">&times;</span>
-            <div class="confirmPasswordContent">
+    <div id="confirm-modal" class="confirm-modal">
+        <div class="confirm-modal-content">
+            <span class="close-confirm-modal">&times;</span>
+            <div class="confirm-password-content">
                 <p>비밀번호를 입력하세요</p>
-                <input type="password" id="modalPasswordInput" placeholder="비밀번호" minlength="4" maxlength="4">
-                <button id="confirmPassword">확인</button>
+                <input type="password" id="modal-password-input" placeholder="비밀번호" minlength="4" maxlength="4">
+                <button id="confirm-password">확인</button>
             </div>
         </div>
     </div>
     <!-- 리뷰 수정 모달 창 -->
-    <div id="modifyModal" class="modifyModal">
-        <div class="modifyModalContent">
-            <span class="closeModifyModal">&times;</span>
-            <div class="modifyReviewContent">
-                <select id="modifyRating" class="modifyRating" required>
+    <div id="modify-modal" class="modify-modal">
+        <div class="modify-modal-content">
+            <span class="close-modify-modal">&times;</span>
+            <div class="modify-review-content">
+                <select id="modify-rating" class="modify-rating" required>
                     <option value="none">별점 선택</option>
                     <option value="⭐">⭐</option>
                     <option value="⭐⭐">⭐⭐</option>
@@ -65,8 +65,8 @@
                     <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
                     <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
                 </select>
-                <textarea id="modifyReview" rows="4" placeholder="리뷰글 (최대 100자)" maxlength="100" required></textarea>
-                <button id="confirmModifyReview">확인</button>
+                <textarea id="modify-review" rows="4" placeholder="리뷰글 (최대 100자)" maxlength="100" required></textarea>
+                <button id="confirm-modify-review">확인</button>
             </div>
         </div>
     </div>
