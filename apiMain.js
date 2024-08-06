@@ -24,6 +24,12 @@ async function popularApi() {
     <img src="https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}" alt="movie image" />
     </a>
     `;
+
+    // 쿼리스트링
+    slide.onclick = () => {
+      window.location.href = `detailPage.html?id=${movie.id}`;
+    };
+
     bannerSlides.appendChild(slide);
   });
 
@@ -137,6 +143,11 @@ async function popularApi() {
     <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="movie image" />
     </a>
     `;
+
+    // 쿼리스트링
+    slide.onclick = () => {
+      window.location.href = `detailPage.html?id=${movie.id}`;
+    };
     popularSlides.appendChild(slide);
   });
 
@@ -246,6 +257,11 @@ async function topRated() {
       <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="movie image" />
       </a>
       `;
+
+    // 쿼리스트링
+    slide.onclick = () => {
+      window.location.href = `detailPage.html?id=${movie.id}`;
+    };
     topRatedSlides.appendChild(slide);
   });
 
@@ -351,6 +367,11 @@ async function nowPlaying() {
         <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="movie image" />
         </a>
         `;
+
+    // 쿼리스트링
+    slide.onclick = () => {
+      window.location.href = `detailPage.html?id=${movie.id}`;
+    };
     nowPlayingSlides.appendChild(slide);
   });
 
