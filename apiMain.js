@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const topButton = document.querySelector('.move-top-button');
 
   const scrollFunction = () => {
-    if (document.documentElement.scrollTop > 500) {
+    if (document.documentElement.scrollTop > 200) {
       topButton.style.display = 'block';
     } else {
       topButton.style.display = 'none';
