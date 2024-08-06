@@ -1,6 +1,7 @@
 ![slice](https://capsule-render.vercel.app/api?type=slice&color=000&height=200&text=JavaScript&fontAlign=75&rotate=13&fontAlignY=25&desc=&descAlign=70.&descAlignY=44&fontColor=f9c427)
 
 # JavaScript 팀 과제
+![image](https://github.com/user-attachments/assets/f594886a-8966-47fc-9213-9e3b932c24f4)
 
 ---
 
