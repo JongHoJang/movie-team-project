@@ -9,13 +9,28 @@ const options = {
       'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MzhkNzIxZTRjYzgwNTU0NGM3NDQyOTVkNWQ0NTgwOSIsIm5iZiI6MTcyMjQ5MzgxMi43MDA2ODksInN1YiI6IjY2YTJlYzljMDk5MDU0NTUxNDYxMmJlOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.CrYho_flSejWu4M0bLQq4uFADdDAPFUi-pX3fKlYLsc'
   }
 };
+const fetchMovies = async (pages) => {
+  const movies = [];
 
-fetch(`${BASE_URL}now_playing?language=en-US&page=1`, options)
-  .then((response) => response.json())
-  .then((response) => {
-    renderNowMovies(response.results);
-  })
-  .catch((err) => console.error(err));
+  for (let page = 1; page <= pages; page++) {
+    try {
+      const response = await fetch(`${BASE_URL}now_playing?language=en-US&page=${page}`, options);
+      const data = await response.json();
+      movies.push(...data.results);
+    } catch (error) {
+      console.error(`Error fetching page ${page}:`, error);
+    }
+  }
+
+  return movies;
+};
+
+// API 호출
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const movies = await fetchMovies(10);
+  renderNowMovies(movies);
+});
 
 // 영화 카드
 const createNowMovieCard = (movie) => {
@@ -58,11 +73,33 @@ function search_movie(event) {
         const movieContainer = document.getElementById('NowMovieContainer');
         movieContainer.innerHTML = '';
 
-        movies.forEach((movie) => {
-          const card = createNowMovieCard(movie);
-          movieContainer.appendChild(card);
-        });
+        if (movies.length > 0) {
+          movies.forEach((movie) => {
+            const card = createNowMovieCard(movie);
+            movieContainer.appendChild(card);
+          });
+        } else {
+          openModal();
+        }
       })
       .catch((error) => console.error('Error:', error));
   }
 }
+
+// 모달
+function openModal() {
+  document.getElementById('noResultModal').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('noResultModal').style.display = 'none';
+}
+
+document.getElementById('search-form').addEventListener('submit', search_movie);
+
+window.onclick = function (event) {
+  const modal = document.getElementById('noResultModal');
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+};
