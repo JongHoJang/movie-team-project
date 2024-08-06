@@ -46,6 +46,8 @@ async function displayMovieDetails() {
     // 점수
     document.querySelector('.movie-rate').textContent = `${(movieDetails.vote_average * 10).toFixed(2)} 점`;
 
+    //
+    //
     // About the movie
     // 세로 포스터
     document.querySelector('.poster-img').src = `https://image.tmdb.org/t/p/original${movieDetails.poster_path}`;
@@ -58,7 +60,7 @@ async function displayMovieDetails() {
       document.querySelector('#movie-director').textContent = `감독 정보가 없습니다.`;
     }
 
-    // 배우
+    // 배우(이미지,이름)
     fetchMovieCredits().then((movieCredits) => {
       const top5Cast = movieCredits.cast.slice(0, 5);
       const castContainer = document.querySelector('.actor-container');
@@ -82,15 +84,6 @@ async function displayMovieDetails() {
         castContainer.appendChild(actorDiv);
       });
     });
-
-    // 장르
-    const genres = movieDetails.genres;
-    function formatGenreNames(genres) {
-      return genres.map((genre) => genre.name).join(', ');
-    }
-    const genreNames = formatGenreNames(movieDetails.genres); // genres에서 장르 이름을 가져옴
-    document.querySelector('#movie-genre-ids').textContent = genreNames;
-    console.log(movieDetails.genres);
 
     // 줄거리
     document.querySelector('#movie-overview').textContent = movieDetails.overview;
