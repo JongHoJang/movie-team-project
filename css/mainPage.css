@@ -226,6 +226,7 @@ header h1 {
   display: block;
   width: 240px;
   height: 360px;
+  border-radius: 10px;
   overflow: hidden;
 }
 
