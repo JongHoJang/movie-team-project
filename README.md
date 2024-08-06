@@ -2,7 +2,8 @@
 
 # JavaScript 팀 과제
 
-![image](https://github.com/user-attachments/assets/f594886a-8966-47fc-9213-9e3b932c24f4)
+![image](https://github.com/user-attachments/assets/a8365982-959a-4ba6-b6d1-a85c732cff1e)
+
 
 ---
 
