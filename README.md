@@ -52,7 +52,7 @@
 
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 
-<img src="https://i.namu.wiki/i/BjtcR_5hbeNK-1yW-7oVcD-nI0ldhGF0jLMLQCQs48M1ZKaudlzvIE4s6okFjBLPb4J8SbdPpEqPM7b5yI-09CeeA2HIvJOV_ze3GpDLh_g3acDDDx4bxnY7NjX-4xoPud8RAti_yEBz-iv2iFv0cg.svg" width="50" height="50">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyr_YI8S4bax2nzVnRUnl51NO6aX1aYNvmK0RMCop_R4D_AG-yFiuBw6V3YNVlfOa0Opk&usqp=CAU" width="60" height="60"> <img src="https://camo.githubusercontent.com/9e30e8175154be99e32777c31d5854a0bab39e1caf6e3fa1ef6495d27366fc6f/68747470733a2f2f63646e2e69636f6e2d69636f6e732e636f6d2f69636f6e73322f323130372f504e472f3531322f66696c655f747970655f7673636f64655f69636f6e5f3133303038342e706e67" width="60" height="60">
 
 ### 팀원별 역할
 
