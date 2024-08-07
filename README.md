@@ -2,7 +2,17 @@
 
 # JavaScript 팀 과제
 
+### 메인 페이지
 ![image](https://github.com/user-attachments/assets/a8365982-959a-4ba6-b6d1-a85c732cff1e)
+### 메뉴 페이지
+![image](https://github.com/user-attachments/assets/f5ec15d6-da6f-4060-92e7-f51ff6eadf85)
+### 상세 페이지 1-1
+![image](https://github.com/user-attachments/assets/4e8a841e-47fe-4602-be37-56608fe86c39)
+### 상세 페이지 1-2
+![image](https://github.com/user-attachments/assets/28df7e01-9e42-4100-8ed1-6c791c6daa9e)
+
+
+
 
 ---
 
