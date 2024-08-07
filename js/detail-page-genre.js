@@ -78,6 +78,11 @@ async function displayMovieDetails() {
       relativeMovieContain.appendChild(relativeMoviePoster);
       relativeMovieContain.appendChild(relativeMovieTitle);
       relativeMovieContainer.appendChild(relativeMovieContain);
+
+      // 개별 영화 카드에 클릭 이벤트 리스너 추가
+      relativeMovieContain.addEventListener('click', () => {
+        window.location.href = `detailPage.html?id=${movie.id}`;
+      });
     });
 
     const relativeContainer = document.querySelector('.relative-movie-container');

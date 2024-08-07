@@ -181,6 +181,7 @@ main {
 .relative-movie-img {
   width: 200px;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .relative-movie-title {
