@@ -16,16 +16,17 @@
     <!-- main -->
     <main>
       <div class="searchMain">
-        <h1 class="menu-title">Top Rate &#127916;</h1>
+        <h1 class="menu-title">Top Rated &#127916;</h1>
         <form id="search-form" class="search-form" onsubmit="search_movie(event)">
-          <input id="search-box" class="search-box" placeholder="영화 검색..." />
-          <button id="searchBtn">검색</button>
+          <input id="search-box" class="search-box" placeholder="Seacrh Movies..." />
+          <button id="searchBtn">Search</button>
         </form>
         <ul>
-          <li>Drama</li>
-          <li>Action</li>
-          <li>Comedy</li>
-          <li>etc</li>
+          <li class="toggle-btn">Action</li>
+          <li class="toggle-btn">Comedy</li>
+          <li class="toggle-btn">Adventure</li>
+          <li class="toggle-btn">Drama</li>
+          <li class="toggle-btn">Animation</li>
         </ul>
       </div>
 
@@ -46,9 +47,7 @@
 
     <!-- footer -->
     <footer>
-      <p>비전공자들</p>
-      <br />
-      <p>팀원 | 이윤지 이창현 장종호 한수빈</p>
+      <div data-include-path="footer.html"></div>
     </footer>
 
     <script src="js/top-menu.js"></script>

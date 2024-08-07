@@ -39,12 +39,12 @@ async function displayMovieDetails() {
     document.querySelector('.release-year').textContent = new Date(movieDetails.release_date).getFullYear();
 
     // 상영 시간
-    document.querySelector('.movie-runtime').textContent = `${Math.floor(movieDetails.runtime / 60)}시간 ${
+    document.querySelector('.movie-runtime').textContent = `${Math.floor(movieDetails.runtime / 60)}h ${
       movieDetails.runtime % 60
-    }분`;
+    }m`;
 
     // 점수
-    document.querySelector('.movie-rate').textContent = `${(movieDetails.vote_average * 10).toFixed(2)} 점`;
+    document.querySelector('.movie-rate').textContent = `${(movieDetails.vote_average * 10).toFixed(2)}%`;
 
     //
     //
@@ -57,7 +57,15 @@ async function displayMovieDetails() {
     if (director) {
       document.querySelector('#movie-director').textContent = `${director.name}`;
     } else {
-      document.querySelector('#movie-director').textContent = `감독 정보가 없습니다.`;
+      document.querySelector('#movie-director').textContent = `There is no director information.`;
+    }
+
+    // 감독
+    const producer = movieCredits.crew.find((member) => member.job === 'Producer');
+    if (producer) {
+      document.querySelector('#movie-producer').textContent = `${producer.name}`;
+    } else {
+      document.querySelector('#movie-producer').textContent = `There is no producer information.`;
     }
 
     // 배우(이미지,이름)

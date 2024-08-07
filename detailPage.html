@@ -1,91 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/detailPage.css" />
+    <script defer src="/js/header-footer.js"></script>
+    <script defer src="js/detail-page.js"></script>
+    <script defer src="js/detail-page-genre.js"></script>
+    <script defer src="/js/reactionButtons.js"></script>
+    <script defer src="/js/review.js"></script>
+    <script src="https://kit.fontawesome.com/1dfaa744db.js" crossorigin="anonymous"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="/css/normalize.css" />
-  <link rel="stylesheet" href="/css/detailPage.css" />
-  <script defer src="/js/header-footer.js"></script>
-  <script defer src="js/detail-page.js"></script>
-  <script defer src="js/detail-page-genre.js"></script>
-  <script defer src="/js/reactionButtons.js"></script>
-  <script defer src="/js/review.js"></script>
-  <script src="https://kit.fontawesome.com/1dfaa744db.js" crossorigin="anonymous"></script>
-</head>
+  <body>
+    <!-- Headers -->
+    <header>
+      <div data-include-path="header.html"></div>
+    </header>
+    <!-- Main -->
+    <main>
+      <!-- 타이틀, 포스터 영역 -->
+      <div class="autosize-poster"><img class="autosize-poster-img" src= /></div>
+      <div class="background-left"></div>
 
-<body>
-  <!-- Headers -->
-  <header>
-    <div data-include-path="header.html"></div>
-  </header>
-  <!-- Main -->
-  <main>
-    <!-- 타이틀, 포스터 영역 -->
-    <div class="autosize-poster"><img class="autosize-poster-img" src= /></div>
-    <div class="background-left"></div>
-
-    <div class="detail-poster-container">
-      <div class="detail-poster-content">
-        <div class="detail-poster-left">
-          <div class="title-year">
-            <h1 class="movie-title"></h1>
-            <span class="release-year"></span>
-          </div>
-          <div class="runtine-rate">
-            <span class="movie-runtime"></span>
-            <span class="movie-rate"></span>
+      <div class="detail-poster-container">
+        <div class="detail-poster-content">
+          <div class="detail-poster-left">
+            <div class="title-year">
+              <h1 class="movie-title"></h1>
+              <div class="release-year"></div>
+            </div>
+            <div class="runtine-rate">
+              <span class="movie-runtime"></span>
+              <span class="movie-rate"></span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- 영화 설명 -->
-    <div class="detail-wrapper">
-      <h1 class="about-movie">About the Movie</h1>
-      <div class="detail-content">
-        <div class="datail-left">
-          <div class="info-movie-contain">
-            <div class="info-movie-title">감독</div>
-            <span class="info-movie-content" id="movie-director">Mark Dindal</span>
+      <!-- 영화 설명 -->
+      <div class="detail-wrapper">
+        <h1 class="about-movie">About the Movie</h1>
+        <div class="detail-content">
+          <div class="datail-left">
+            <div class="info-movie-contain">
+              <div class="info-movie-title">Director</div>
+              <span class="info-movie-content" id="movie-director"></span>
+            </div>
+            <div class="info-movie-contain">
+              <div class="info-movie-title">Producer</div>
+              <span class="info-movie-content" id="movie-producer"></span>
+            </div>
+            <div class="info-movie-contain">
+              <div class="info-movie-title">Genre</div>
+              <span class="info-movie-content" id="movie-genre-ids"></span>
+            </div>
+            <div class="info-movie-contain">
+              <div class="info-movie-title">Overview</div>
+              <p id="movie-overview"></p>
+            </div>
+            <div class="info-movie-contain">
+              <div class="info-movie-title">Actor</div>
+              <div class="actor-container"></div>
+            </div>
           </div>
-          <div class="info-movie-contain">
-            <div class="info-movie-title">배우</div>
-            <div class="actor-container"></div>
-          </div>
-          <div class="info-movie-contain">
-            <div class="info-movie-title">장르</div>
-            <span class="info-movie-content" id="movie-genre-ids"></span>
-          </div>
-          <div class="info-movie-contain">
-            <div class="info-movie-title">줄거리</div>
-            <p id="movie-overview"></p>
-          </div>
-        </div>
-        <div class="datail-right">
-          <img class="poster-img" src= />
-          <div class="good-bad-btn-container">
-            <button id="like-btn" class="reaction-btn"><i class="fa-solid fa-thumbs-up"></i><span
-                id="like-count"></span></button>
-            <button id="hate-btn" class="reaction-btn"><i class="fa-solid fa-thumbs-down"></i><span
-                id="hate-count"></span></button>
+          <div class="detail-right">
+            <img class="poster-img" src= />
+            <div class="good-bad-btn-container">
+              <button id="like-btn" class="reaction-btn">
+                <i class="fa-solid fa-thumbs-up"></i><span id="like-count"></span>
+              </button>
+              <button id="hate-btn" class="reaction-btn">
+                <i class="fa-solid fa-thumbs-down"></i><span id="hate-count"></span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- 리뷰 영역 -->
-    <div id="review-container">
-      <div id="review-section">
-        <h1>Full review</h1>
-        <div id="reviews"></div>
+      <!-- 리뷰 영역 -->
+      <div id="review-container">
+        <div id="review-section">
+          <h1>Full review</h1>
+          <div id="reviews"></div>
+        </div>
+        <div id="creat-review">
+          <h2>Write a review</h2>
+          <form id="review-form">
+            <div class="form-group-top">
+              <input type="text" id="author" placeholder="User name" autocomplete="off" maxlength="11" required />
+              <select id="rating" class="rating" required>
+                <option value="none">Product Rating</option>
+                <option value="⭐">⭐</option>
+                <option value="⭐⭐">⭐⭐</option>
+                <option value="⭐⭐⭐">⭐⭐⭐</option>
+                <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+                <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+              </select>
+              <input type="password" id="password" placeholder="Password" minlength="4" maxlength="4" required />
+            </div>
+            <div class="form-group-bottom">
+              <textarea id="review" placeholder="Wirte a review (100)" maxlength="100" required></textarea>
+              <button id="submit-btn" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div id="creat-review">
-        <h2>Write a review</h2>
-        <form id="review-form">
-          <div class="form-group-top">
-            <input type="text" id="author" placeholder="User name" autocomplete="off" maxlength="11" required />
-            <select id="rating" class="rating" required>
+      <!-- 비밀번호 확인 모달 창 -->
+      <div id="confirm-modal" class="confirm-modal">
+        <div class="confirm-modal-content">
+          <span class="close-confirm-modal">&times;</span>
+          <div class="confirm-password-content">
+            <p class="confirm-message">Enter password</p>
+            <div class="confirm-password-content-box">
+              <input type="password" id="modal-password-input" placeholder="Password" minlength="4" maxlength="4" />
+              <button id="confirm-password">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 리뷰 수정 모달 창 -->
+      <div id="modify-modal" class="modify-modal">
+        <div class="modify-modal-content">
+          <span class="close-modify-modal">&times;</span>
+          <div class="modify-review-content">
+            <p class="modify-message">Edit the review</p>
+            <select id="modify-rating" class="modify-rating" required>
               <option value="none">Product Rating</option>
               <option value="⭐">⭐</option>
               <option value="⭐⭐">⭐⭐</option>
@@ -93,54 +134,20 @@
               <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
               <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
             </select>
-            <input type="password" id="password" placeholder="Password" minlength="4" maxlength="4" required />
-          </div>
-          <div class="form-group-bottom">
-            <textarea id="review" placeholder="Wirte a review (100)" maxlength="100" required></textarea>
-            <button id="submit-btn" type="submit">Submit</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!-- 비밀번호 확인 모달 창 -->
-    <div id="confirm-modal" class="confirm-modal">
-      <div class="confirm-modal-content">
-        <span class="close-confirm-modal">&times;</span>
-        <div class="confirm-password-content">
-          <p class="confirm-message">Enter password</p>
-          <div class="confirm-password-content-box">
-            <input type="password" id="modal-password-input" placeholder="Password" minlength="4" maxlength="4" />
-            <button id="confirm-password">OK</button>
+            <textarea id="modify-review" placeholder="Wirte a review (100)" maxlength="100" required></textarea>
+            <button id="confirm-modify-review">Submit</button>
           </div>
         </div>
       </div>
-    </div>
-    <!-- 리뷰 수정 모달 창 -->
-    <div id="modify-modal" class="modify-modal">
-      <div class="modify-modal-content">
-        <span class="close-modify-modal">&times;</span>
-        <div class="modify-review-content">
-          <p class="modify-message">Edit the review</p>
-          <select id="modify-rating" class="modify-rating" required>
-            <option value="none">Product Rating</option>
-            <option value="⭐">⭐</option>
-            <option value="⭐⭐">⭐⭐</option>
-            <option value="⭐⭐⭐">⭐⭐⭐</option>
-            <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
-            <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
-          </select>
-          <textarea id="modify-review" placeholder="Wirte a review (100)" maxlength="100" required></textarea>
-          <button id="confirm-modify-review">Submit</button>
-        </div>
-      </div>
-    </div>
-    <!-- 연관 영화 -->
-    <div class="info-movie-title" id="info-relative-movie-title">연관 영화</div>
-    <div id="relative-movies-container"></div>
-  </main>
+      <!-- 연관 영화 -->
+      <div class="container-divide"></div>
+      <div class="info-movie-title" id="info-relative-movie-title">Similar Genre</div>
+      <div id="relative-movies-container"></div>
+    </main>
 
-  <!-- Footer -->
-  <footer></footer>
-</body>
-
+    <!-- Footer -->
+    <footer>
+      <div data-include-path="footer.html"></div>
+    </footer>
+  </body>
 </html>
