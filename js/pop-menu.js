@@ -9,19 +9,10 @@ const options = {
       'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MzhkNzIxZTRjYzgwNTU0NGM3NDQyOTVkNWQ0NTgwOSIsIm5iZiI6MTcyMjQ5MzgxMi43MDA2ODksInN1YiI6IjY2YTJlYzljMDk5MDU0NTUxNDYxMmJlOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.CrYho_flSejWu4M0bLQq4uFADdDAPFUi-pX3fKlYLsc'
   }
 };
+
 // API 호출
 const fetchMovies = async (pages) => {
   const movies = [];
-
-  // 영화 데이터 가져오기
-  // fetch(`${BASE_URL}popular?language=en-US&page=1`, options)
-  //   .then((response) => response.json())
-  //   .then((response) => {
-  //     renderMovies(response.results);
-  //   })
-  //   .catch((err) => console.error(err));
-  //
-  //
 
   for (let page = 1; page <= pages; page++) {
     try {
@@ -32,7 +23,6 @@ const fetchMovies = async (pages) => {
       console.error(`Error fetching page ${page}:`, error);
     }
   }
-
   return movies;
 };
 
@@ -40,9 +30,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   const movies = await fetchMovies(10);
   renderMovies(movies);
 });
-//
-//
 
+//
+// 장르 토글
 document.addEventListener('DOMContentLoaded', (event) => {
   const toggleButtons = document.querySelectorAll('.toggle-btn');
 
@@ -58,23 +48,23 @@ function getGenreName(id) {
   const genres = {
     28: 'Action',
     12: 'Adventure',
-    // 16: 'Animation',
-    35: 'Comedy'
-    // 80: 'Crime',
-    // 99: 'Documentary',
-    // 18: 'Drama',
-    // 10751: 'Family',
-    // 14: 'Fantasy',
-    // 36: 'History',
-    // 27: 'Horror',
-    // 10402: 'Music',
-    // 9648: 'Mystery',
-    // 10749: 'Romance',
-    // 878: 'Science Fiction',
-    // 10770: 'TV Movie',
-    // 53: 'Thriller',
-    // 10752: 'War',
-    // 37: 'Western'
+    16: 'Animation',
+    35: 'Comedy',
+    80: 'Crime',
+    99: 'Documentary',
+    18: 'Drama',
+    10751: 'Family',
+    14: 'Fantasy',
+    36: 'History',
+    27: 'Horror',
+    10402: 'Music',
+    9648: 'Mystery',
+    10749: 'Romance',
+    878: 'Science Fiction',
+    10770: 'TV Movie',
+    53: 'Thriller',
+    10752: 'War',
+    37: 'Western'
   };
   return genres[id] || 'etc';
 }
@@ -109,7 +99,6 @@ const renderMovies = (movies) => {
       window.location.href = `detailPage.html?id=${movie.id}`;
     };
   });
-
   filterMovies();
 };
 
