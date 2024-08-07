@@ -16,7 +16,9 @@
     <!-- main -->
     <main>
       <div class="searchMain">
-        <h1 class="menu-title">Top Rated &#127916;</h1>
+        <a href="/pages/topMenu.html" class="title-decoration">
+          <h1 class="menu-title">Top Rated &#127916;</h1>
+        </a>
         <form id="search-form" class="search-form" onsubmit="search_movie(event)">
           <input id="search-box" class="search-box" placeholder="Seacrh Movies..." />
           <button id="searchBtn">Search</button>
@@ -40,7 +42,7 @@
       <div id="noResultModal" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeModal()">&times;</span>
-          <p>검색한 결과가 나오지 않습니다.</p>
+          <p class="modal-comment">검색한 결과가 나오지 않습니다.</p>
         </div>
       </div>
     </main>
