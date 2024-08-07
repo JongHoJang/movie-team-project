@@ -12,6 +12,12 @@ ul li {
   transition: background-color 0.3s;
 }
 
+.title-decoration {
+  text-decoration: none;
+  color: #f9c427;
+  cursor: pointer;
+}
+
 .toggle-btn {
   color: white;
   padding: 14px 30px;

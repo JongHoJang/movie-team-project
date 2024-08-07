@@ -27,7 +27,7 @@ async function popularApi() {
 
     // 쿼리스트링
     slide.onclick = () => {
-      window.location.href = `detailPage.html?id=${movie.id}`;
+      window.location.href = `/pages/detailPage.html?id=${movie.id}`;
     };
 
     bannerSlides.appendChild(slide);
@@ -146,7 +146,7 @@ async function popularApi() {
 
     // 쿼리스트링
     slide.onclick = () => {
-      window.location.href = `detailPage.html?id=${movie.id}`;
+      window.location.href = `/pages/detailPage.html?id=${movie.id}`;
     };
     popularSlides.appendChild(slide);
   });
@@ -260,7 +260,7 @@ async function topRated() {
 
     // 쿼리스트링
     slide.onclick = () => {
-      window.location.href = `detailPage.html?id=${movie.id}`;
+      window.location.href = `/pages/detailPage.html?id=${movie.id}`;
     };
     topRatedSlides.appendChild(slide);
   });
@@ -370,7 +370,7 @@ async function nowPlaying() {
 
     // 쿼리스트링
     slide.onclick = () => {
-      window.location.href = `detailPage.html?id=${movie.id}`;
+      window.location.href = `/pages/detailPage.html?id=${movie.id}`;
     };
     nowPlayingSlides.appendChild(slide);
   });

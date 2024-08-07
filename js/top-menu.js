@@ -26,11 +26,15 @@ const fetchMovies = async (pages) => {
   return movies;
 };
 
-document.addEventListener('DOMContentLoaded', async () => {
+// 전체 영화 리스트 로드 함수
+const loadAllMovies = async () => {
   const movies = await fetchMovies(10);
   renderTopMovies(movies);
-});
+};
 
+document.addEventListener('DOMContentLoaded', loadAllMovies);
+
+//
 // 장르 토글
 document.addEventListener('DOMContentLoaded', (event) => {
   const toggleButtons = document.querySelectorAll('.toggle-btn');
@@ -127,6 +131,7 @@ function filterMovies() {
 // 영화 검색
 function search_movie(event) {
   event.preventDefault();
+  let searchQuery = document.querySelector('.search-box').value.trim(); // 검색어 저장
   const query = document.querySelector('.search-box').value.toLowerCase();
 
   if (query) {
@@ -143,7 +148,7 @@ function search_movie(event) {
             movieContainer.appendChild(card);
           });
         } else {
-          openModal();
+          openModal(searchQuery);
         }
       })
       .catch((error) => console.error('Error:', error));
@@ -151,12 +156,15 @@ function search_movie(event) {
 }
 
 // 모달
-function openModal() {
+function openModal(searchQuery) {
   document.getElementById('noResultModal').style.display = 'block';
+  document.querySelector('.modal-comment').textContent = `"${searchQuery}"로 검색한 영화 제목이 없습니다.`;
 }
 
 function closeModal() {
   document.getElementById('noResultModal').style.display = 'none';
+  document.querySelector('.search-box').value = '';
+  loadAllMovies();
 }
 
 document.getElementById('search-form').addEventListener('submit', search_movie);
@@ -165,5 +173,7 @@ window.onclick = function (event) {
   const modal = document.getElementById('noResultModal');
   if (event.target == modal) {
     modal.style.display = 'none';
+    document.querySelector('.search-box').value = '';
+    loadAllMovies();
   }
 };
